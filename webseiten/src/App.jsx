@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
+import BackToTop from "./components/BackToTop.jsx";
 import Home from "./pages/Home.jsx";
 import ProjectBackstage from "./pages/ProjectBackstage.jsx";
 import ProjectTagebuch from "./pages/ProjectTagebuch.jsx";
 import ProjectWebsite from "./pages/ProjectWebsite.jsx";
+import AboutMe from "./pages/AboutMe.jsx";
 
 function ScrollManager() {
   const location = useLocation();
@@ -30,6 +32,7 @@ function ScrollManager() {
 export default function App() {
   return (
     <>
+      <div className="grain-overlay" aria-hidden="true" />
       <ScrollManager />
       <NavBar />
       <main>
@@ -38,9 +41,11 @@ export default function App() {
           <Route path="/projekte/backstage-validator" element={<ProjectBackstage />} />
           <Route path="/projekte/tagebuch-app" element={<ProjectTagebuch />} />
           <Route path="/projekte/diese-webseite" element={<ProjectWebsite />} />
+          <Route path="/ueber-mich" element={<AboutMe />} />
         </Routes>
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

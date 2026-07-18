@@ -8,7 +8,7 @@ const TOC = [
   { id: "architektur", label: "Architektur" },
   { id: "datenbank", label: "Datenbank" },
   { id: "datenschutz", label: "Datenschutz & Backup" },
-  { id: "erkenntnisse", label: "Was das Projekt zeigt" },
+  { id: "erkenntnisse", label: "Was habe ich gelernt" },
 ];
 
 export default function ProjectTagebuch() {
@@ -126,12 +126,12 @@ export default function ProjectTagebuch() {
         <code>Batch</code>-API von SQLite, um N+1-Query-Probleme zu vermeiden.
       </p>
 
-      <h2 id="erkenntnisse">Was dieses Projekt zeigt</h2>
+      <h2 id="erkenntnisse">Was habe ich gelernt</h2>
       <ul>
-        <li><strong>Produktdenken über mehrere Domänen hinweg</strong> — drei fachlich unterschiedliche Bereiche in einem konsistenten Datenmodell und einer gemeinsamen UI zusammengeführt.</li>
-        <li><strong>Eigenständige technische Entscheidungen</strong> — von der Wahl des Frameworks bis zur Backup-Strategie, ohne Vorgaben von außen.</li>
-        <li><strong>Sauber gepflegte Dokumentation</strong> — Architektur, Features, Datenbankschema und Setup sind in eigenen Markdown-Dokumenten festgehalten, nicht nur „im Kopf“.</li>
-        <li><strong>Sensibilität für Datenschutz</strong> — bewusste Offline-First-Entscheidung bei persönlichen und gesundheitsbezogenen Daten.</li>
+        <li><strong>Produktdenken über mehrere Domänen hinweg</strong> — ich habe gelernt, drei fachlich unterschiedliche Bereiche in einem konsistenten Datenmodell und einer gemeinsamen UI zusammenzuführen, statt sie isoliert zu bauen.</li>
+        <li><strong>Eigenständige technische Entscheidungen treffen</strong> — von der Wahl des Frameworks bis zur Backup-Strategie musste ich mich ohne Vorgaben von außen entscheiden und diese Entscheidungen auch begründen können.</li>
+        <li><strong>Dokumentation von Anfang an mitdenken</strong> — Architektur, Features, Datenbankschema und Setup laufend in eigenen Markdown-Dokumenten festzuhalten, hat mir gezeigt, wie viel Zeit das bei der Weiterentwicklung Monate später spart.</li>
+        <li><strong>Datenschutz als Architekturentscheidung, nicht als Nachgedanke</strong> — die bewusste Offline-First-Entscheidung bei persönlichen und gesundheitsbezogenen Daten habe ich von Anfang an mitgeplant statt sie nachträglich aufzusetzen.</li>
       </ul>
 
       <div className="doc-pagenav">

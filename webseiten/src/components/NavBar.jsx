@@ -23,12 +23,16 @@ export default function NavBar() {
 
         <nav className={`nav-links ${open ? "is-open" : ""}`} onClick={() => setOpen(false)}>
           <Link to="/#projekte">Projekte</Link>
-          <Link to="/#ueber-mich">Über mich</Link>
+          <Link to="/ueber-mich">Über mich</Link>
           <Link to="/#kontakt">Kontakt</Link>
-          <a className="nav-cv" href="/Lebenslauf-Baron.pdf" target="_blank" rel="noreferrer">
+          <a className="nav-cv nav-cv-mobile" href="/Lebenslauf-Baron.pdf" target="_blank" rel="noreferrer">
             Lebenslauf ↓
           </a>
         </nav>
+
+        <a className="nav-cv" href="/Lebenslauf-Baron.pdf" target="_blank" rel="noreferrer">
+          Lebenslauf ↓
+        </a>
       </div>
     </header>
   );
