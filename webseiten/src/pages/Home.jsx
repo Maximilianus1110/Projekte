@@ -166,10 +166,6 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal as="p" className="about-outro" delay={120}>
-          Um dir einen besseren Einblick in meine Arbeitsweise und mein Können zu geben, zeige ich im Folgenden
-          vier Projekte im Detail — von der ersten Anforderung bis zum fertigen Ergebnis.
-        </Reveal>
       </section>
 
       <section className="section" id="projekte">
@@ -177,8 +173,9 @@ export default function Home() {
           <p className="kicker">Projekte</p>
           <h2>Vier Projekte, im Detail dokumentiert</h2>
           <p>
-            Zwei Softwareprojekte, dazu diese Webseite selbst und ein Blick auf mich als fortlaufendes
-            „Projekt in Entwicklung".
+            Um dir einen besseren Einblick in meine Arbeitsweise und mein Können zu geben, stelle ich hier vier
+            Projekte im Detail vor — von der ersten Anforderung bis zum fertigen Ergebnis: zwei Softwareprojekte,
+            diese Webseite selbst und ein Blick auf mich als fortlaufendes „Projekt in Entwicklung".
           </p>
         </Reveal>
 
