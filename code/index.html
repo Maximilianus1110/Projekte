@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maximilian Baron — Portfolio</title>
     <meta name="description" content="Maximilian Baron, Fachinformatiker für Anwendungsentwicklung — Projekte, Werdegang und technische Case Studies." />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
