@@ -188,11 +188,14 @@ export default function Home() {
                 <span className="k">spec.owner:</span> team-k35
                 <span className="k">spec.lifecycle:</span> production
               </div>
-              <span className="banner-icon">⚙️</span>
             </div>
             <div className="project-body">
               <h3>Backstage Softwarekatalog — Validierungssystem</h3>
-              <p>Go-Microservice, der 120+ Entwicklerteams automatisiert vor fehlerhaften Katalog-Einträgen warnt.</p>
+              <ul className="project-points">
+                <li>Go-Microservice im Backend</li>
+                <li>Prüft automatisiert 120+ Entwicklerteams</li>
+                <li>Warnt per E-Mail bei fehlerhaften Einträgen</li>
+              </ul>
               <div className="tag-row">
                 <span className="tag">Go</span>
                 <span className="tag">Backend</span>
@@ -210,11 +213,14 @@ export default function Home() {
                 <div className="mock-phone-row accent" style={{ width: "45%" }} />
                 <div className="mock-phone-row" style={{ width: "60%" }} />
               </div>
-              <span className="banner-icon">📓</span>
             </div>
             <div className="project-body">
-              <h3>Tagebuch App</h3>
-              <p>Offline-First Flutter-App mit Tagebuch, Gym-Tracking und Küchenverwaltung — alle Daten lokal.</p>
+              <h3>Persönliche Mobile App</h3>
+              <ul className="project-points">
+                <li>Offline-First Flutter-App</li>
+                <li>Tagebuch, Gym-Tracking &amp; Küchenverwaltung</li>
+                <li>Alle Daten bleiben lokal</li>
+              </ul>
               <div className="tag-row">
                 <span className="tag">Flutter</span>
                 <span className="tag">Dart</span>
@@ -235,11 +241,14 @@ export default function Home() {
                   <div className="ln" style={{ width: "65%" }} />
                 </div>
               </div>
-              <span className="banner-icon">🧩</span>
             </div>
             <div className="project-body">
-              <h3>Diese Webseite</h3>
-              <p>React &amp; Vite statt Baukasten — inklusive zwei kompletter Redesigns aufgrund von Feedback.</p>
+              <h3>Webseiten</h3>
+              <ul className="project-points">
+                <li>React &amp; Vite statt Baukasten</li>
+                <li>Zwei komplette Redesigns durch Feedback</li>
+                <li>Diese Seite selbst als Beispiel</li>
+              </ul>
               <div className="tag-row">
                 <span className="tag">React</span>
                 <span className="tag">Vite</span>
@@ -257,15 +266,10 @@ export default function Home() {
                 <span style={{ height: "70%" }} />
                 <span style={{ height: "95%" }} />
               </div>
-              <span className="banner-icon">🚀</span>
             </div>
             <div className="featured-body">
               <p className="kicker featured-kicker">Mein größtes Projekt</p>
-              <h3>Ich — Baron</h3>
-              <p>
-                Mein größtes Projekt bin ich selber — seit 19 Jahren in der Entwicklung: ständig neue Updates,
-                ab und zu ein Bug, aber die Roadmap stimmt.
-              </p>
+              <p className="featured-mystery">???</p>
               <span className="project-link featured-link">Jetzt enthüllen <span className="arrow">→</span></span>
             </div>
           </Reveal>
