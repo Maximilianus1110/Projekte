@@ -10,14 +10,14 @@ const TOUR_STEPS = [
     text: "Statt eines einseitigen Anschreibens zeige ich hier meine Projekte im Detail — inklusive Planung, Wirtschaftlichkeit und technischer Umsetzung.",
   },
   {
+    selector: "#ueber-mich-heading",
+    title: "Wer ich bin",
+    text: "Kurze Vorstellung, meine Motivation und mein Werdegang — mit allen Stationen von der Mittelschule bis zum IHK-Abschluss.",
+  },
+  {
     selector: "#projekte-grid",
     title: "Die Projekte",
     text: "Jede Karte führt auf eine eigene, ausführliche Unterseite im Doku-Stil — mit Architektur, Code-Beispielen, Zahlen und Ergebnissen.",
-  },
-  {
-    selector: "#ueber-mich-heading",
-    title: "Werdegang & Kompetenzen",
-    text: "Hier findest du kompakt meinen Bildungsweg und die Fähigkeiten, die in beiden Projekten stecken — von Projektplanung bis Go & Flutter.",
   },
   {
     selector: "#kontakt-box",
@@ -33,45 +33,16 @@ export default function Home() {
     <>
       <Tour ref={tourRef} steps={TOUR_STEPS} />
 
-      <section className="hero" id="hero">
-        <span className="blob blob-a" aria-hidden="true" />
-        <span className="blob blob-b" aria-hidden="true" />
-        <span className="blob blob-c" aria-hidden="true" />
-        <div className="hero-inner">
-          <div>
-            <span className="eyebrow">Fachinformatiker für Anwendungsentwicklung</span>
-            <h1 id="hero-heading">
-              Maximilian Baron —<br />
-              <span className="accent-text">IT-Projekte, die halten was sie versprechen.</span>
-            </h1>
-            <p className="hero-lede">
-              Ich plane, baue und dokumentiere IT-Projekte — vom Anforderungsgespräch bis zur
-              Wirtschaftlichkeitsrechnung. Diese Seite ersetzt kein Anschreiben, sondern zeigt, wie ich tatsächlich
-              arbeite.
-            </p>
-            <div className="hero-actions">
-              <Link to="/#projekte" className="btn btn-primary">
-                Projekte ansehen
-              </Link>
-              <button className="btn btn-outline" onClick={() => tourRef.current?.start()}>
-                ▶ Tour starten
-              </button>
-            </div>
-            <dl className="hero-facts">
-              <div>
-                <dt>IHK-Abschlussprojekt</dt>
-                <dd>79 / 100 Punkte</dd>
-              </div>
-              <div>
-                <dt>Ausbildung</dt>
-                <dd>IT-Systemhaus der Bundesagentur für Arbeit, 2022–2025</dd>
-              </div>
-              <div>
-                <dt>Aktuell</dt>
-                <dd>Service &amp; Kundenkontakt, McDonald's Deutschland</dd>
-              </div>
-            </dl>
-          </div>
+      <section className="hero hero-bold" id="hero">
+        <div className="hero-bg" aria-hidden="true">
+          <span className="hero-grid" />
+          <span className="hero-sheen" />
+          <span className="hero-blob hb-a" />
+          <span className="hero-blob hb-b" />
+          <span className="hero-blob hb-c" />
+        </div>
+        <div className="hero-inner hero-inner-center">
+          <h1 id="hero-heading" className="hero-name">Maximilian Baron</h1>
 
           <div className="hero-photo-wrap">
             <div className="hero-photo-ring">
@@ -89,7 +60,116 @@ export default function Home() {
               Offen für neue Herausforderungen
             </div>
           </div>
+
+          <div className="hero-actions">
+            <Link to="/#projekte" className="btn btn-primary">
+              Projekte ansehen
+            </Link>
+            <button className="btn btn-outline" onClick={() => tourRef.current?.start()}>
+              ▶ Tour starten
+            </button>
+          </div>
         </div>
+      </section>
+
+      <section className="section" id="ueber-mich">
+        <Reveal className="section-head">
+          <p className="kicker">Über mich</p>
+          <h2 id="ueber-mich-heading">Wer ich bin</h2>
+          <span className="eyebrow">Fachinformatiker für Anwendungsentwicklung</span>
+        </Reveal>
+
+        <div className="about-grid" id="ueber-mich-content">
+          <Reveal as="div" className="about-text">
+            <p className="about-lede">
+              Ich bin Maximilian, 19 Jahre alt und in Nürnberg zu Hause. Nach der Mittelschule und der FOS habe ich
+              mich bewusst für den praktischen Weg entschieden — die Ausbildung zum Fachinformatiker im
+              IT-Systemhaus der Bundesagentur für Arbeit, statt erst Jahre zu studieren, bevor ich echte Projekte
+              anfasse.
+            </p>
+            <p className="about-motivation">
+              Was mich antreibt: Ich will verstehen, <em>warum</em> ich etwas tue, nicht nur <em>wie</em>. Deshalb
+              reizt mich an der IT weniger die einzelne Zeile Code als der Teil davor — Anforderungen, Zahlen,
+              Verantwortung. Dass meine Ausbildung „nur" der praktische Weg war, sehe ich als Ansporn: Ich hole mir
+              das große Bild selbst, zum Beispiel indem ich Projekte wie diese Webseite komplett eigenständig
+              plane, baue und dokumentiere.
+            </p>
+            <Link to="/ueber-mich" className="project-link" style={{ marginTop: 8 }}>
+              Mehr über mich <span className="arrow">→</span>
+            </Link>
+          </Reveal>
+          <Reveal as="div" className="about-timeline-col" delay={100}>
+            <h3 className="about-subhead">Werdegang</h3>
+            <ol className="timeline-compact">
+              <li>
+                <span className="tl-date">2015–2021</span>
+                <div className="tl-body">
+                  <span className="tl-title">Robert-Bosch-Mittelschule, Mittlerer Schulabschluss</span>
+                  <div className="tl-detail">
+                    <span>Qualifizierender Mittelschulabschluss (07.2020)</span>
+                    <span>Mittlerer Schulabschluss (07.2021)</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span className="tl-date">2021–2022</span>
+                <div className="tl-body">
+                  <span className="tl-title">FOS II Nürnberg, Wirtschaftszweig</span>
+                  <div className="tl-detail">
+                    <span>Vertiefung wirtschaftlicher Grundlagen als Zwischenschritt vor der Ausbildung.</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span className="tl-date">2022–2025</span>
+                <div className="tl-body">
+                  <span className="tl-title">Ausbildung Fachinformatiker Anwendungsentwicklung, IT-Systemhaus der BA</span>
+                  <div className="tl-detail">
+                    <span>Schwerpunkte: Projektplanung, Anforderungsanalyse, Jira &amp; Agile Methoden, User-Support</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span className="tl-date">Sommer 2025</span>
+                <div className="tl-body">
+                  <span className="tl-title">IHK-Abschlussprüfung</span>
+                  <div className="tl-detail">
+                    <span>Prüfungsteil „Planen und Umsetzen eines Softwareprojektes" — 79/100 Punkte</span>
+                  </div>
+                </div>
+              </li>
+              <li className="is-current">
+                <span className="tl-date">seit 08.2025</span>
+                <div className="tl-body">
+                  <span className="tl-title">McDonald's Deutschland — Service &amp; Kundenkontakt</span>
+                  <div className="tl-detail">
+                    <span>Fokus: Training von Stressresistenz und Multitasking in Hochlastphasen.</span>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </Reveal>
+        </div>
+
+        <Reveal as="dl" className="about-facts-wide">
+          <div>
+            <dt>IHK-Prüfung</dt>
+            <dd>Planen und Umsetzen eines Softwareprojektes — 79/100 Pkt.</dd>
+          </div>
+          <div>
+            <dt>Ausbildung</dt>
+            <dd>IT-Systemhaus der Bundesagentur für Arbeit, 2022–2025</dd>
+          </div>
+          <div>
+            <dt>Aktuell</dt>
+            <dd>Service &amp; Kundenkontakt, McDonald's Deutschland</dd>
+          </div>
+        </Reveal>
+
+        <Reveal as="p" className="about-outro" delay={120}>
+          Um dir einen besseren Einblick in meine Arbeitsweise und mein Können zu geben, zeige ich im Folgenden
+          vier Projekte im Detail — von der ersten Anforderung bis zum fertigen Ergebnis.
+        </Reveal>
       </section>
 
       <section className="section" id="projekte">
@@ -172,7 +252,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal as={Link} to="/#ueber-mich" className="project-card" delay={200}>
+          <Reveal as={Link} to="/ueber-mich" className="project-card" delay={200}>
             <div className="project-banner banner-ich">
               <span className="banner-badge">Laufend</span>
               <div className="mock-chart">
@@ -198,79 +278,46 @@ export default function Home() {
 
       <section className="section section-alt">
         <Reveal className="section-head center">
-          <p className="kicker">Arbeitsweise</p>
-          <h2>Worauf es bei mir ankommt</h2>
+          <p className="kicker">Mein Board</p>
+          <h2>Wie ein Sprint bei mir aussieht</h2>
         </Reveal>
-        <div className="expertise-grid">
-          <Reveal as="div" className="expertise-card" delay={0}>
-            <div className="expertise-num">01</div>
-            <h4>Planung vor Code</h4>
-            <p>Anforderungen, Zeitplan und Wirtschaftlichkeit zuerst klären — genau das habe ich in meinem
-              IHK-Projekt vollständig durchgerechnet, bevor eine Zeile Go geschrieben wurde.</p>
-          </Reveal>
-          <Reveal as="div" className="expertise-card" delay={80}>
-            <div className="expertise-num">02</div>
-            <h4>Eigenverantwortung</h4>
-            <p>Beide Projekte habe ich eigenständig von der Idee bis zur Übergabe verantwortet — inklusive
-              Entscheidungen, die ich auch begründen und dokumentieren kann.</p>
-          </Reveal>
-          <Reveal as="div" className="expertise-card" delay={160}>
-            <div className="expertise-num">03</div>
-            <h4>Belastbarkeit</h4>
-            <p>Trainiert im direkten Kundenkontakt bei McDonald's — Multitasking und Priorisierung unter
-              Zeitdruck gehören zum Alltag.</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section" id="ueber-mich">
-        <Reveal className="section-head">
-          <p className="kicker">Über mich</p>
-          <h2 id="ueber-mich-heading">Werdegang &amp; Kompetenzen</h2>
-        </Reveal>
-        <div className="about-grid" id="ueber-mich-content">
-          <Reveal as="div" className="about-text">
-            <p>
-              Meine Ausbildung zum Fachinformatiker für Anwendungsentwicklung habe ich von 09.2022 bis 07.2025 im
-              IT-Systemhaus der Bundesagentur für Arbeit absolviert — im Team K35 „Technische Plattform". Seit
-              08.2025 arbeite ich zusätzlich bei McDonald's Deutschland im Service- und Kundenkontakt, was
-              Stressresistenz und Priorisierung unter Zeitdruck trainiert.
-            </p>
-            <p>
-              Am meisten interessiert mich der Teil der Projektarbeit, der vor dem eigentlichen Code passiert:
-              Anforderungen strukturieren, Zeit und Kosten realistisch einschätzen, Prioritäten setzen und den
-              Überblick behalten — genau das habe ich in meinem IHK-Projekt mit einer vollständigen
-              Wirtschaftlichkeitsanalyse belegt.
-            </p>
-            <div className="tag-row">
-              <span className="tag">MS Office</span>
-              <span className="tag">Jira &amp; Confluence</span>
-              <span className="tag">Agile Methoden</span>
-              <span className="tag">Go</span>
-              <span className="tag">Flutter / Dart</span>
-              <span className="tag">SQLite</span>
-              <span className="tag">Git</span>
+        <Reveal as="div" className="board">
+          <div className="board-header">
+            <span className="board-dot dot-red" />
+            <span className="board-dot dot-amber" />
+            <span className="board-dot dot-green" />
+            <span className="board-title">baron / wie-ich-arbeite</span>
+          </div>
+          <div className="board-columns">
+            <div className="board-col">
+              <div className="board-col-head">To do <span className="board-count">1</span></div>
+              <div className="board-card">
+                <span className="board-card-tag tag-blue">Planung</span>
+                <h4>Planung vor Code</h4>
+                <p>Anforderungen, Zeitplan und Wirtschaftlichkeit zuerst klären — genau das habe ich in meinem
+                  IHK-Projekt vollständig durchgerechnet, bevor eine Zeile Go geschrieben wurde.</p>
+              </div>
             </div>
-          </Reveal>
-          <Reveal as="ol" className="timeline-compact" delay={100}>
-            <li>
-              <span className="tl-date">2015–2021</span>
-              <span>Robert-Bosch-Mittelschule, Mittlerer Schulabschluss</span>
-            </li>
-            <li>
-              <span className="tl-date">2021–2022</span>
-              <span>FOS II Nürnberg, Wirtschaftszweig</span>
-            </li>
-            <li>
-              <span className="tl-date">2022–2025</span>
-              <span>Ausbildung Fachinformatiker Anwendungsentwicklung, IT-Systemhaus der BA — IHK-Projekt mit 79 Punkten</span>
-            </li>
-            <li className="is-current">
-              <span className="tl-date">seit 2025</span>
-              <span>McDonald's Deutschland — Service &amp; Kundenkontakt</span>
-            </li>
-          </Reveal>
-        </div>
+            <div className="board-col">
+              <div className="board-col-head">In Arbeit <span className="board-count">1</span></div>
+              <div className="board-card">
+                <span className="board-card-tag tag-teal">Ownership</span>
+                <h4>Eigenverantwortung</h4>
+                <p>Beide Projekte habe ich eigenständig von der Idee bis zur Übergabe verantwortet — inklusive
+                  Entscheidungen, die ich auch begründen und dokumentieren kann.</p>
+              </div>
+            </div>
+            <div className="board-col">
+              <div className="board-col-head">Erledigt <span className="board-count">1</span></div>
+              <div className="board-card is-done">
+                <span className="board-card-tag tag-amber">Belastbarkeit</span>
+                <h4>Auch im Chaos liefern</h4>
+                <p>Trainiert im direkten Kundenkontakt bei McDonald's — Multitasking und Priorisierung unter
+                  Zeitdruck gehören zum Alltag.</p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="section">
