@@ -423,7 +423,7 @@ code {
 .section-head p { color: var(--ink-dim); margin: 12px 0 0; font-size: 1.02rem; }
 
 /* ---------- Project cards ---------- */
-.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 
 .project-card {
   display: flex;
@@ -533,6 +533,36 @@ code {
 .project-card:hover .project-link { gap: 10px; }
 .project-link .arrow { transition: transform .18s ease; }
 .project-card:hover .project-link .arrow { transform: translateX(3px); }
+
+/* ---------- Featured project card ("Ich — Baron") ---------- */
+.project-card-featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  background:
+    radial-gradient(120% 180% at 85% 100%, rgba(226, 161, 58, .35) 0%, transparent 60%),
+    var(--navy-950);
+  border: 1.5px solid var(--amber-500);
+  box-shadow: 0 0 0 1px rgba(226, 161, 58, .18), var(--shadow-sm);
+}
+.project-card-featured:hover {
+  border-color: var(--amber-500);
+  box-shadow: 0 0 0 1px rgba(226, 161, 58, .35), var(--shadow);
+}
+.featured-visual {
+  flex: 0 0 240px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, .1);
+}
+.featured-visual .mock-chart span { background: rgba(226, 161, 58, .8); }
+.featured-visual .banner-icon { position: absolute; bottom: 16px; left: 18px; }
+.featured-body { padding: 28px 32px; display: flex; flex-direction: column; justify-content: center; gap: 10px; flex: 1; }
+.featured-kicker { color: var(--amber-500) !important; margin: 0; }
+.featured-body h3 { margin: 0; color: #fff; font-size: 1.25rem; }
+.featured-body p:not(.featured-kicker) { color: rgba(255, 255, 255, .78); margin: 0; font-size: .95rem; }
+.featured-link { color: var(--amber-500) !important; }
 
 /* ---------- Expertise / numbered ---------- */
 .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
@@ -1080,11 +1110,17 @@ code {
 .tour-btn-primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1040px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-photo-wrap { order: -1; }
   .hero-photo-ring { width: 200px; height: 200px; }
   .project-grid { grid-template-columns: 1fr; }
+  .project-card-featured { flex-direction: column; }
+  .featured-visual { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, .1); height: 140px; }
   .expertise-grid { grid-template-columns: 1fr; }
   .about-facts-wide { grid-template-columns: 1fr; }
   .board-columns { grid-template-columns: 1fr; }
