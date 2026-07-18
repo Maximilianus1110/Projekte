@@ -198,7 +198,7 @@ export default function Home() {
                 <span className="tag">Backend</span>
                 <span className="tag">IHK-Projekt</span>
               </div>
-              <span className="project-link">Case Study lesen <span className="arrow">→</span></span>
+              <span className="project-link">Projekt ansehen <span className="arrow">→</span></span>
             </div>
           </Reveal>
 
@@ -220,7 +220,7 @@ export default function Home() {
                 <span className="tag">Dart</span>
                 <span className="tag">SQLite</span>
               </div>
-              <span className="project-link">Case Study lesen <span className="arrow">→</span></span>
+              <span className="project-link">Projekt ansehen <span className="arrow">→</span></span>
             </div>
           </Reveal>
 
@@ -245,13 +245,12 @@ export default function Home() {
                 <span className="tag">Vite</span>
                 <span className="tag">Meta</span>
               </div>
-              <span className="project-link">Case Study lesen <span className="arrow">→</span></span>
+              <span className="project-link">Projekt ansehen <span className="arrow">→</span></span>
             </div>
           </Reveal>
 
-          <Reveal as={Link} to="/ueber-mich" className="project-card" delay={200}>
-            <div className="project-banner banner-ich">
-              <span className="banner-badge">Laufend</span>
+          <Reveal as={Link} to="/ueber-mich" className="project-card project-card-featured" delay={200}>
+            <div className="featured-visual">
               <div className="mock-chart">
                 <span style={{ height: "30%" }} />
                 <span style={{ height: "50%" }} />
@@ -260,14 +259,14 @@ export default function Home() {
               </div>
               <span className="banner-icon">🚀</span>
             </div>
-            <div className="project-body">
+            <div className="featured-body">
+              <p className="kicker featured-kicker">Mein größtes Projekt</p>
               <h3>Ich — Baron</h3>
-              <p>Mein wichtigstes Projekt: von der Mittelschule über die Ausbildung bis zum IHK-Projekt mit 79 Punkten.</p>
-              <div className="tag-row">
-                <span className="tag">Lernen</span>
-                <span className="tag">Wachstum</span>
-              </div>
-              <span className="project-link">Werdegang ansehen <span className="arrow">→</span></span>
+              <p>
+                Mein größtes Projekt bin ich selber — seit 19 Jahren in der Entwicklung: ständig neue Updates,
+                ab und zu ein Bug, aber die Roadmap stimmt.
+              </p>
+              <span className="project-link featured-link">Jetzt enthüllen <span className="arrow">→</span></span>
             </div>
           </Reveal>
         </div>
